@@ -1,0 +1,780 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/1-bit-pack-kennynl/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=1]
+[ext_resource path="res://player.gd" type="Script" id=2]
+[ext_resource path="res://Pushable_obj.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
+[node name="Player" type="Area2D" parent="." groups=[
+"box",
+]]
+position = Vector2( 64, 64 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+position = Vector2( 8, 8 )
+enabled = true
+cast_to = Vector2( 0, 16 )
+
+[node name="Tween" type="Tween" parent="Player"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+
+[node name="Pushable_obj" type="KinematicBody2D" parent="." groups=[
+"box",
+]]
+position = Vector2( 128, 64 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable_obj"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Pushable_obj"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 1049
+
+[node name="Tween" type="Tween" parent="Pushable_obj"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pushable_obj"]
+
+[node name="RayCast2D" type="RayCast2D" parent="Pushable_obj"]
+position = Vector2( 8, 8 )
+cast_to = Vector2( 0, 16 )
+
+[node name="Pushable_obj2" type="KinematicBody2D" parent="." groups=[
+"box",
+]]
+position = Vector2( 112, 96 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable_obj2"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Pushable_obj2"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 1049
+
+[node name="Tween" type="Tween" parent="Pushable_obj2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pushable_obj2"]
+
+[node name="RayCast2D" type="RayCast2D" parent="Pushable_obj2"]
+position = Vector2( 8, 8 )
+cast_to = Vector2( 0, 16 )
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2( 112, 80 )
+
+[node name="Static_obj" type="StaticBody2D" parent="Walls"]
+position = Vector2( -80, -32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj"]
+
+[node name="Static_obj2" type="StaticBody2D" parent="Walls"]
+position = Vector2( -80, -16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj2"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj2"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj2"]
+
+[node name="Static_obj3" type="StaticBody2D" parent="Walls"]
+position = Vector2( -80, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj3"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj3"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj3"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj3"]
+
+[node name="Static_obj4" type="StaticBody2D" parent="Walls"]
+position = Vector2( -80, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj4"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj4"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj4"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj4"]
+
+[node name="Static_obj5" type="StaticBody2D" parent="Walls"]
+position = Vector2( -80, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj5"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj5"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj5"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj5"]
+
+[node name="Static_obj6" type="StaticBody2D" parent="Walls"]
+position = Vector2( -80, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj6"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj6"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj6"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj6"]
+
+[node name="Static_obj7" type="StaticBody2D" parent="Walls"]
+position = Vector2( -80, 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj7"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj7"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj7"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj7"]
+
+[node name="Static_obj8" type="StaticBody2D" parent="Walls"]
+position = Vector2( -64, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj8"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj8"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj8"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj8"]
+
+[node name="Static_obj9" type="StaticBody2D" parent="Walls"]
+position = Vector2( -32, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj9"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj9"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj9"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj9"]
+
+[node name="Static_obj10" type="StaticBody2D" parent="Walls"]
+position = Vector2( -16, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj10"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj10"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj10"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj10"]
+
+[node name="Static_obj11" type="StaticBody2D" parent="Walls"]
+position = Vector2( 0, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj11"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj11"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj11"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj11"]
+
+[node name="Static_obj12" type="StaticBody2D" parent="Walls"]
+position = Vector2( 16, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj12"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj12"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj12"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj12"]
+
+[node name="Static_obj13" type="StaticBody2D" parent="Walls"]
+position = Vector2( 32, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj13"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj13"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj13"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj13"]
+
+[node name="Static_obj14" type="StaticBody2D" parent="Walls"]
+position = Vector2( 48, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj14"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj14"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj14"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj14"]
+
+[node name="Static_obj15" type="StaticBody2D" parent="Walls"]
+position = Vector2( 80, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj15"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj15"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj15"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj15"]
+
+[node name="Static_obj16" type="StaticBody2D" parent="Walls"]
+position = Vector2( 64, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj16"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj16"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj16"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj16"]
+
+[node name="Static_obj17" type="StaticBody2D" parent="Walls"]
+position = Vector2( 80, 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj17"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj17"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj17"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj17"]
+
+[node name="Static_obj18" type="StaticBody2D" parent="Walls"]
+position = Vector2( 80, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj18"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj18"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj18"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj18"]
+
+[node name="Static_obj19" type="StaticBody2D" parent="Walls"]
+position = Vector2( 96, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj19"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj19"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj19"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj19"]
+
+[node name="Static_obj20" type="StaticBody2D" parent="Walls"]
+position = Vector2( 96, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj20"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj20"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj20"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj20"]
+
+[node name="Static_obj21" type="StaticBody2D" parent="Walls"]
+position = Vector2( 96, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj21"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj21"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj21"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj21"]
+
+[node name="Static_obj22" type="StaticBody2D" parent="Walls"]
+position = Vector2( 96, -16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj22"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj22"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj22"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj22"]
+
+[node name="Static_obj23" type="StaticBody2D" parent="Walls"]
+position = Vector2( 96, -32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj23"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj23"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj23"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj23"]
+
+[node name="Static_obj24" type="StaticBody2D" parent="Walls"]
+position = Vector2( 96, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj24"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj24"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj24"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj24"]
+
+[node name="Static_obj25" type="StaticBody2D" parent="Walls"]
+position = Vector2( 80, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj25"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj25"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj25"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj25"]
+
+[node name="Static_obj26" type="StaticBody2D" parent="Walls"]
+position = Vector2( 48, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj26"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj26"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj26"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj26"]
+
+[node name="Static_obj27" type="StaticBody2D" parent="Walls"]
+position = Vector2( 64, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj27"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj27"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj27"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj27"]
+
+[node name="Static_obj28" type="StaticBody2D" parent="Walls"]
+position = Vector2( 32, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj28"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj28"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj28"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj28"]
+
+[node name="Static_obj29" type="StaticBody2D" parent="Walls"]
+position = Vector2( 16, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj29"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj29"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj29"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj29"]
+
+[node name="Static_obj30" type="StaticBody2D" parent="Walls"]
+position = Vector2( 0, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj30"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj30"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj30"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj30"]
+
+[node name="Static_obj31" type="StaticBody2D" parent="Walls"]
+position = Vector2( -16, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj31"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj31"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj31"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj31"]
+
+[node name="Static_obj32" type="StaticBody2D" parent="Walls"]
+position = Vector2( -48, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj32"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj32"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj32"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj32"]
+
+[node name="Static_obj33" type="StaticBody2D" parent="Walls"]
+position = Vector2( -32, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj33"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj33"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj33"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj33"]
+
+[node name="Static_obj34" type="StaticBody2D" parent="Walls"]
+position = Vector2( -64, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj34"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj34"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj34"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj34"]
+
+[node name="Static_obj35" type="StaticBody2D" parent="Walls"]
+position = Vector2( -80, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj35"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj35"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj35"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj35"]
+
+[node name="Static_obj36" type="StaticBody2D" parent="Walls"]
+position = Vector2( -48, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Static_obj36"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Static_obj36"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 826
+
+[node name="Tween" type="Tween" parent="Walls/Static_obj36"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Walls/Static_obj36"]
+
+[node name="end_goal2" type="KinematicBody2D" parent="." groups=[
+"end_goal",
+]]
+position = Vector2( 160, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end_goal2"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="end_goal2"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 400
+
+[node name="Tween" type="Tween" parent="end_goal2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="end_goal2"]
+
+[node name="fire" type="KinematicBody2D" parent="."]
+position = Vector2( 64, 112 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fire"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="fire"]
+texture = ExtResource( 1 )
+centered = false
+vframes = 22
+hframes = 48
+frame = 494
+
+[node name="Tween" type="Tween" parent="fire"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fire"]
