@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/1-bit-pack-kennynl/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=1]
-[ext_resource path="res://player.gd" type="Script" id=2]
-[ext_resource path="res://Pushable_obj.gd" type="Script" id=3]
+[ext_resource path="res://player/player.gd" type="Script" id=2]
+[ext_resource path="res://pushable_object/pushable_obj.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -68,7 +68,7 @@ cast_to = Vector2( 0, 16 )
 [node name="Pushable_obj2" type="KinematicBody2D" parent="." groups=[
 "box",
 ]]
-position = Vector2( 112, 96 )
+position = Vector2( 112, 112 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pushable_obj2"]
